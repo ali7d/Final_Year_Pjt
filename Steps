@@ -1,0 +1,30 @@
+Steps to generate text to images with stable diffusion:
+
+1- Import require Libraries
+
+2- Initialize the GUI
+
+3- Add text description box for user input and generate button
+
+4- Use stable diffusion API to generate an image from text
+
+5- Display the image 
+
+
+
+
+For (Google Colab):
+
+- Install requirment packages
+
+- Change runtime type: use GPU
+
+- Create huggingface account and get the user token 
+
+- Setup the StableDiffusionPipeline
+
+- Move the pipeline to GPU using "cuda"
+
+- Run the cell and generate the image
+
+
