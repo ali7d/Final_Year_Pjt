@@ -2,7 +2,7 @@
 
 Stable Diffusion image generated
 
-![Sample Image](https://raw.githubusercontent.com/username/repo-name/branch-name/path/to/firstTest.jpg)
+![Sample Image](https://raw.githubusercontent.com/username/repo-name/branch-name/path/to/firstTest.png)
 
 
 **FEATURES:**
