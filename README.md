@@ -16,12 +16,12 @@ Stable Diffusion image generated
  
  **Requirements:**
  
- -API **REPLICATE_API_TOKEN**
- -tkinter==1.3.3
- -filedialog==2.3.2
- -replicate==0.4.0
- -urllib.request==1.26.14
- -PIL==9.4.0
- -os==2.1.4
- -io==0.2.6
+ - API **REPLICATE_API_TOKEN**
+ - tkinter==1.3.3
+ - filedialog==2.3.2
+ - replicate==0.4.0
+ - urllib.request==1.26.14
+ - PIL==9.4.0
+ - os==2.1.4
+ - io==0.2.6
 
