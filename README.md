@@ -2,6 +2,9 @@
 
 Stable Diffusion image generated
 
+![Sample Image](https://raw.githubusercontent.com/username/repo-name/branch-name/path/to/sample-image.jpg)
+
+
 **FEATURES:**
 
  - Interface: The app is designed to be user-friendly and easy to generate art
