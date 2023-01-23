@@ -2,7 +2,7 @@
 
 Stable Diffusion image generated
 
-![Sample Image](https://raw.githubusercontent.com/ali7d/Final_Year_Pjt/README.md/path/to/firstTest.png)
+![Sample Image](https://github.com/ali7d/Final_Year_Pjt/blob/5b5e371112763948b39160898ebce23aae18c120/ScreenShot.png)
 
 
 **FEATURES:**
