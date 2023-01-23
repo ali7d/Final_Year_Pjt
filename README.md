@@ -1,6 +1,6 @@
 # Final_Year_Pjt
 
-Stable Diffusion image generated
+Lite Stable Diffusion
 
 ![Sample Image](https://github.com/ali7d/Final_Year_Pjt/blob/5b5e371112763948b39160898ebce23aae18c120/ScreenShot.png)
 
@@ -11,7 +11,7 @@ Stable Diffusion image generated
 
  - Stable diffusion: using this process to generate a high quality of images.
 
- - REPLICATE API: The app integrates the REPLICATE API to help users achieve the images they want.
+ - REPLICATE API **("stability-ai/stable-diffusion")**: The app integrates the REPLICATE API to help users achieve the images they want.
 
  - Open-source REPLICATE model: The app is powered by an open-source text-to-image diffusion model for image generation.
 
