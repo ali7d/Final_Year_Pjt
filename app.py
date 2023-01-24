@@ -24,10 +24,11 @@ text_box = tk.Text(master=window, bg="#addb9c", height=2, width=70, font=("Conso
 text_box.pack(pady=10)
 
 image_label = None
-
+output_url = None
 # Generate button
 def generate():
     global image_label
+    global output_url
     # Get the text from the text box
     text = text_box.get("1.0", "end")
     num_images = int(num_images_input.get())
@@ -61,16 +62,16 @@ num_images_input.pack()
 button.pack(pady=10)
 
 def save():
-    try:
-        filename = filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG file", "*.png")])
-        model = replicate.models.get("stability-ai/stable-diffusion")
-        text = text_box.get("1.0", "end")
-        output_url = model.predict(prompt=text)[0]
-        img = Image.open(io.BytesIO(urllib.request.urlopen(output_url).read()))
-        img.save(filename)
-        tk.messagebox.showinfo("Success", "Image saved successfully")
-    except Exception as e:
-        tk.messagebox.showerror("Error", f"An error occurred while saving the image: {e}")
+    if output_url is None:
+       tk.messagebox.showerror( "Error", "No image URL found to save" )
+    else:
+        try:
+           filename = filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG file", "*.png")])
+           img = Image.open(io.BytesIO(urllib.request.urlopen(output_url).read()))
+           img.save(filename)
+           tk.messagebox.showinfo("Success", "Image saved successfully")
+        except Exception as e:
+           tk.messagebox.showerror("Error", f"An error occurred while saving the image: {e}")
 # Save button
 save_button = tk.Button(master=window, bg="#d3d3d3", text="Save", command=save, font=("Consolas", 11))
 save_button.pack(pady=10)
