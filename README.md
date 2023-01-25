@@ -28,3 +28,11 @@ Lite Stable Diffusion
  - os==2.1.4
  - io==0.2.6
 
+**Instructions:**
+
+ - Install Python3 
+ - Install Requirements library
+ - Set Replicate API token
+ - Use the pre trained Stable diffusion model
+ - Run the script Python [main.py]
+ - Test input description and display output image
