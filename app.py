@@ -76,5 +76,10 @@ def save():
 save_button = tk.Button(master=window, bg="#d3d3d3", text="Save", command=save, font=("Consolas", 11))
 save_button.pack(pady=10)
 
+tshirt_image = tshirt_image.resize((300, 300), Resampling.LANCZOS)
+tshirt_photo = ImageTk.PhotoImage(tshirt_image)
+label = tk.Label(image=tshirt_photo)
+label.pack()
+
 # Run the GUI
 window.mainloop()
