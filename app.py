@@ -8,13 +8,21 @@ import os
 import io
 
 # Set the API token
-os.environ["REPLICATE_API_TOKEN"] = "6b77e36dce0a22124b958dea44d2336f3c7ca6c3"
+os.environ["REPLICATE_API_TOKEN"] = "49f139f6e2529ac9a8e8c9382acd09c3ca47b8cf"
 
 # Initialize the GUI
 window = tk.Tk()
 window.title("Lite Stable Diffusion")
-window.geometry("932x1232")
-window.config(bg="#979797")
+window.wm_attributes('-fullscreen', 'true')
+window.resizable(width=True, height=True)
+# Load and resize the background image
+bg_image = Image.open("tshirt.png")
+bg_image_resized = bg_image.resize((700, 600))
+bg_photo = ImageTk.PhotoImage(bg_image_resized)
+
+# Set the background image
+bg_label = tk.Label(window, image=bg_photo)
+bg_label.place(x=0, y=70, relwidth=1, relheight=1)
 
 # Text box for the user to enter a text description
 label = tk.Label(master=window, bg="#cfcfcf", text="Enter Your Prompt:", font=("Consolas", 14))
@@ -22,6 +30,9 @@ label.pack(pady=20)
 
 text_box = tk.Text(master=window, bg="#addb9c", height=2, width=70, font=("Consolas", 12))
 text_box.pack(pady=10)
+
+close_button = tk.Button(master=window, bg="#d3d3d3", text="Close", command=window.destroy, font=("Consolas", 12))
+close_button.place(relx=0.1, rely=0.9, anchor='center')
 
 image_label = None
 output_url = None
@@ -31,13 +42,13 @@ def generate():
     global output_url
     # Get the text from the text box
     text = text_box.get("1.0", "end")
-    num_images = int(num_images_input.get())
+    #num_images = int(num_images_input.get())
 
     # Use the Replicate Stable Diffusion API
     try:
         model = replicate.models.get("stability-ai/stable-diffusion")
-        for i in range(num_images):
-            output_url = model.predict(prompt=text)[0]
+        #for i in range(num_images):
+        output_url = model.predict(prompt=text)[0]
         # Delete previeus image
         if image_label:
             image_label.destroy()
@@ -46,20 +57,22 @@ def generate():
         return
     # Display the generated image
     try:
-        image_byt = urllib.request.urlopen(output_url).read()
-        image = Image.open(io.BytesIO(image_byt))
+        with urllib.request.urlopen(output_url) as url:
+            image_bytes = url.read()
+        image = Image.open(io.BytesIO(image_bytes))
         # Resize the image
         image = image.resize((256, 256), Resampling.LANCZOS)
-        image = ImageTk.PhotoImage(image)
-        image_label = tk.Label(master=window, image=image)
-        image_label.image = image
-        image_label.pack(pady=20)
+        photo_image = ImageTk.PhotoImage(image)
+        image_label = tk.Label(master=window, image=photo_image)
+        image_label.image = photo_image
+        image_label.pack(pady=180)
     except Exception as e:
         tk.messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
 button = tk.Button(master=window, bg="#d3d3d3",text="Generate", command=generate, font=("Consolas", 12))
-num_images_input = tk.Spinbox(master=window, from_=1, to=10)
-num_images_input.pack()
-button.pack(pady=10)
+#num_images_input = tk.Spinbox(master=window, from_=1, to=10)
+#num_images_input.pack()
+button.place(relx=0.8, rely=0.9, anchor='center')
+
 
 def save():
     if output_url is None:
@@ -74,12 +87,7 @@ def save():
            tk.messagebox.showerror("Error", f"An error occurred while saving the image: {e}")
 # Save button
 save_button = tk.Button(master=window, bg="#d3d3d3", text="Save", command=save, font=("Consolas", 11))
-save_button.pack(pady=10)
-
-tshirt_image = tshirt_image.resize((300, 300), Resampling.LANCZOS)
-tshirt_photo = ImageTk.PhotoImage(tshirt_image)
-label = tk.Label(image=tshirt_photo)
-label.pack()
+save_button.place(relx=0.9, rely=0.9, anchor='center')
 
 # Run the GUI
 window.mainloop()
