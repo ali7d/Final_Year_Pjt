@@ -21,7 +21,7 @@ bg_image_resized = bg_image.resize((700, 600))
 bg_photo = ImageTk.PhotoImage(bg_image_resized)
 
 # Set the background image
-bg_label = tk.Label(window, image=bg_photo)
+bg_label = tk.Label(window, image=bg_photo, bg="#BFCBA8")
 bg_label.place(x=0, y=70, relwidth=1, relheight=1)
 
 # Text box for the user to enter a text description
