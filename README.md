@@ -28,7 +28,7 @@ Lite Stable Diffusion
  - Test input description and display output image
 
  
- **Requirements:**
+ **Requirements library:**
  
  - pip install:
  
