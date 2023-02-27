@@ -39,7 +39,7 @@ Lite Stable Diffusion
 
  - Install Python3 
  - Install Requirements library
- - Set API **REPLICATE_API_TOKEN**
+ - Set **REPLICATE_API_TOKEN**
  - Use the pre trained Stable diffusion model
  - Run the script Python [main.py]
  - Test input description and display output image
