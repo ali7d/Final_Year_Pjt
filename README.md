@@ -19,7 +19,8 @@ Lite Stable Diffusion
  
  **Requirements:**
  
- - API **REPLICATE_API_TOKEN**
+ - pip install:
+ 
  - tkinter==1.3.3
  - filedialog==2.3.2
  - replicate==0.4.0
@@ -38,7 +39,7 @@ Lite Stable Diffusion
 
  - Install Python3 
  - Install Requirements library
- - Set Replicate API token
+ - Set API **REPLICATE_API_TOKEN**
  - Use the pre trained Stable diffusion model
  - Run the script Python [main.py]
  - Test input description and display output image
