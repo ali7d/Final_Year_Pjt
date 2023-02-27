@@ -16,6 +16,17 @@ Lite Stable Diffusion
  - Open-source REPLICATE model: The app is powered by an open-source text-to-image diffusion model for image generation.
 
  - Comparison to other user interfaces: The app will be compared to other AI generator user interfaces to highlight areas for improvement.
+
+
+**Instructions:**
+
+ - Install Python3 
+ - Install Requirements library
+ - Set **REPLICATE_API_TOKEN**
+ - Use the pre trained Stable diffusion model
+ - Run the script Python [main.py]
+ - Test input description and display output image
+
  
  **Requirements:**
  
@@ -32,14 +43,3 @@ Lite Stable Diffusion
  - PIL==9.4.0
  - os==2.1.4
  - io==0.2.6
-
-
-
-**Instructions:**
-
- - Install Python3 
- - Install Requirements library
- - Set **REPLICATE_API_TOKEN**
- - Use the pre trained Stable diffusion model
- - Run the script Python [main.py]
- - Test input description and display output image
