@@ -24,9 +24,15 @@ Lite Stable Diffusion
  - filedialog==2.3.2
  - replicate==0.4.0
  - urllib.request==1.26.14
+ - messagebox==1.0.9
+ - Pillow==2.2.2
+ - Image==1.5.33
+ - Resampling==1.5.3
  - PIL==9.4.0
  - os==2.1.4
  - io==0.2.6
+
+
 
 **Instructions:**
 
