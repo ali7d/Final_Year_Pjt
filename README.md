@@ -5,6 +5,14 @@ Lite Stable Diffusion
 ![Sample Image](https://github.com/ali7d/Final_Year_Pjt/blob/08a8afecb3e443f225e9761af3d5f0bc3fc5460b/ScreenShott.png)
 
 
+
+
+**DESC:**
+
+Lite Stable Diffusion is a text-to-image generation application that utilizes the REPLICATE API for stable diffusion. The app is designed to be user-friendly and easy to generate art. The app is powered by an open-source text-to-image diffusion model for image generation.
+
+
+
 **FEATURES:**
 
  - Interface: The app is designed to be user-friendly and easy to generate art
@@ -18,7 +26,7 @@ Lite Stable Diffusion
  - Comparison to other user interfaces: The app will be compared to other AI generator user interfaces to highlight areas for improvement.
 
 
-**Instructions:**
+**INSTRUCTIONS:**
 
  - Install Python3 
  - Install Requirements library
@@ -28,7 +36,7 @@ Lite Stable Diffusion
  - Test input description and display output image
 
  
- **Requirements library:**
+ **REQUIREMENTS LIBRARY:**
  
  - pip install:
  
@@ -43,3 +51,11 @@ Lite Stable Diffusion
  - PIL==9.4.0
  - os==2.1.4
  - io==0.2.6
+
+
+**INSTALLATION:**
+
+To install the necessary packages, run the following command:
+
+pip install -r requirements.txt
+
