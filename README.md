@@ -57,5 +57,6 @@ Lite Stable Diffusion is a text-to-image generation application that utilizes th
 
 To install the necessary packages, run the following command:
 
+```
 pip install -r requirements.txt
-
+```
