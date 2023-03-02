@@ -72,9 +72,14 @@ def generate():
         tk.messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
         
 def update_ui_from_history():
-    # Display the previous images in the history
     for prompt, url, image in image_history:
             add_image_to_history(prompt, url, image)
+            
+def add_image_to_history(prompt, url, image):
+    # Append the new image to the history
+    image_history.append((prompt, url, image))
+    if len(image_history) > 5:
+        image_history.pop(0)            
             
 button = tk.Button(master=window, bg="#d3d3d3",text="Generate", command=generate, font=("Consolas", 12))
 #num_images_input = tk.Spinbox(master=window, from_=1, to=10)
