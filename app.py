@@ -36,7 +36,9 @@ close_button.place(relx=0.1, rely=0.9, anchor='center')
 
 image_label = None
 output_url = None
-# Generate button
+
+image_history = []
+
 def generate():
     global image_label
     global output_url
@@ -68,6 +70,19 @@ def generate():
         image_label.pack(pady=180)
     except Exception as e:
         tk.messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
+        
+def update_ui_from_history():
+     for prompt, url in image_history:
+        try:
+            with urllib.request.urlopen(url) as url:
+                image_bytes = url.read()
+            image = Image.open(io.BytesIO(image_bytes))
+            # Resize the image
+            image = image.resize((256, 256), Resampling.LANCZOS)
+            update_ui_with_image(image)
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
+            
 button = tk.Button(master=window, bg="#d3d3d3",text="Generate", command=generate, font=("Consolas", 12))
 #num_images_input = tk.Spinbox(master=window, from_=1, to=10)
 #num_images_input.pack()
