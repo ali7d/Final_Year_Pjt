@@ -81,7 +81,7 @@ def update_ui_from_history():
             image = image.resize((256, 256), Resampling.LANCZOS)
             update_ui_with_image(image)
         except Exception as e:
-            messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
+            tk.messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
             
 button = tk.Button(master=window, bg="#d3d3d3",text="Generate", command=generate, font=("Consolas", 12))
 #num_images_input = tk.Spinbox(master=window, from_=1, to=10)
