@@ -8,7 +8,7 @@ import os
 import io
 
 # Set the API token
-os.environ["REPLICATE_API_TOKEN"] = "49f139f6e2529ac9a8e8c9382acd09c3ca47b8cf"
+os.environ["REPLICATE_API_TOKEN"] = "f9e5970c7b6721d2c2676bb3cd55cc80bee31588"
 
 # Initialize the GUI
 window = tk.Tk()
@@ -79,7 +79,7 @@ def add_image_to_history(prompt, url, image):
     # Append the new image to the history
     image_history.append((prompt, url, image))
     if len(image_history) > 5:
-        image_history.pop(0)            
+        image_history.pop(0)           
             
 button = tk.Button(master=window, bg="#d3d3d3",text="Generate", command=generate, font=("Consolas", 12))
 #num_images_input = tk.Spinbox(master=window, from_=1, to=10)
