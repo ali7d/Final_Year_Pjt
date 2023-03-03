@@ -82,8 +82,6 @@ def add_image_to_history(prompt, url, image):
         image_history.pop(0)           
             
 button = tk.Button(master=window, bg="#d3d3d3",text="Generate", command=generate, font=("Consolas", 12))
-#num_images_input = tk.Spinbox(master=window, from_=1, to=10)
-#num_images_input.pack()
 button.place(relx=0.8, rely=0.9, anchor='center')
 
 
