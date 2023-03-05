@@ -9,8 +9,7 @@ Lite Stable Diffusion
 
 **DESC:**
 
-Lite Stable Diffusion is a text-to-image generation application that utilizes the REPLICATE API for stable diffusion. The app is designed to be user-friendly and easy to generate art. The app is powered by an open-source text-to-image diffusion model for image generation.
-
+Lite Stable Diffusion is a text-to-image generation application that utilizes the REPLICATE API for stable diffusion. The app is designed to be user-friendly and easy to generate art. The app is powered by an open-source text-to-image diffusion model for image generation. The goal of the app is to provide users with a simple and accessible tool for creating high quality images for t-shirt.
 
 
 **FEATURES:**
