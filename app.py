@@ -70,17 +70,7 @@ def generate():
                 label.place(x=x_offset, y=200)
                 x_offset += 300
     except Exception as e:
-        tk.messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
-        
-def update_ui_from_history():
-    for prompt, url, image in image_history:
-            add_image_to_history(prompt, url, image)
-            
-def add_image_to_history(prompt, url, image):
-    # Append the new image to the history
-    image_history.append((prompt, url, image))
-    if len(image_history) > 5:
-        image_history.pop(0)           
+        tk.messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")          
             
 button = tk.Button(master=window, bg="#d3d3d3",text="Generate", command=generate, font=("Consolas", 12))
 button.place(relx=0.8, rely=0.9, anchor='center')
