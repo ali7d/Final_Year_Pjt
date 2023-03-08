@@ -44,9 +44,6 @@ def generate():
         model = replicate.models.get("stability-ai/stable-diffusion")
         #for i in range(num_images):
         output_url = model.predict(prompt=text)[0]
-        # Delete previeus image
-        if image_label:
-            image_label.destroy()
     except Exception as e:
         tk.messagebox.showerror("Error", f"An error occurred while generating the image: {e}")
         return
@@ -59,8 +56,19 @@ def generate():
         image = image.resize((256, 256), Resampling.LANCZOS)
         photo_image = ImageTk.PhotoImage(image)
         image_label = tk.Label(master=window, image=photo_image)
+        # Add the image_url key to the label object
+        image_label.image_url = output_url
         image_label.image = photo_image
-        image_label.pack(pady=180)
+        image_labels.append(image_label)
+        # Display images horizontally
+        x_offset = 20
+        for i, label in enumerate(image_labels):
+            if i >= 4:
+                # Remove the oldest image
+                label.pack_forget()
+            else:
+                label.place(x=x_offset, y=200)
+                x_offset += 300
     except Exception as e:
         tk.messagebox.showerror("Error", f"An error occurred while displaying the image: {e}")
         
