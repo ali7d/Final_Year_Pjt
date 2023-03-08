@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox, simpledialog
 import replicate
 import urllib.request
 from PIL import ImageTk, Image
