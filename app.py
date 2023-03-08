@@ -16,14 +16,6 @@ window.configure(bg="#808080")
 window.title("Lite Stable Diffusion")
 window.wm_attributes('-fullscreen', 'true')
 window.resizable(width=True, height=True)
-# Load and resize the background image
-bg_image = Image.open("tshirt.png")
-bg_image_resized = bg_image.resize((700, 600))
-bg_photo = ImageTk.PhotoImage(bg_image_resized)
-
-# Set the background image
-bg_label = tk.Label(window, image=bg_photo, bg="#BFCBA8")
-bg_label.place(x=0, y=70, relwidth=1, relheight=1)
 
 # Text box for the user to enter a text description
 label = tk.Label(master=window, bg="#cfcfcf", text="Enter Your Prompt:", font=("Consolas", 14))
