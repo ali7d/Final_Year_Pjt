@@ -12,6 +12,7 @@ os.environ["REPLICATE_API_TOKEN"] = "f9e5970c7b6721d2c2676bb3cd55cc80bee31588"
 
 # Initialize the GUI
 window = tk.Tk()
+window.configure(bg="#808080")
 window.title("Lite Stable Diffusion")
 window.wm_attributes('-fullscreen', 'true')
 window.resizable(width=True, height=True)
