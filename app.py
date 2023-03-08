@@ -8,7 +8,7 @@ import os
 import io
 
 # Set the API token
-os.environ["REPLICATE_API_TOKEN"] = "f9e5970c7b6721d2c2676bb3cd55cc80bee31588"
+os.environ["REPLICATE_API_TOKEN"] = "3f845265fa106c6558532441b42bf235f9314f68"
 
 # Initialize the GUI
 window = tk.Tk()
@@ -30,10 +30,9 @@ close_button.place(relx=0.1, rely=0.9, anchor='center')
 image_label = None
 output_url = None
 
-image_history = []
+image_labels = []
 
 def generate():
-    global image_label
     global output_url
     # Get the text from the text box
     text = text_box.get("1.0", "end")
@@ -82,6 +81,13 @@ def save():
        return
     # Create a list of tuples containing the index and label for each image
     image_choices = [(i, label) for i, label in enumerate(image_labels)]
+    
+    # Display a dialog box with a list of image choices for the user to select from
+    choice = tk.messagebox.askquestion("Save Image", "Which image do you want to save?", icon='question', 
+                                        type=tk.messagebox.YESNO, 
+                                        detail="\n".join([f"{i+1}: {label['text']}" for i, label in image_choices]))
+    if choice == tk.messagebox.NO:
+        return
     
     # Get the selected image label
     selected_label = None
