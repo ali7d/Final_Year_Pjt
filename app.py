@@ -77,14 +77,26 @@ button.place(relx=0.8, rely=0.9, anchor='center')
 
 
 def save():
-    if output_url is None:
+    if not image_labels:
        tk.messagebox.showerror( "Error", "No image URL found to save" )
-    else:
+       return
+    # Get the selected image label
+    selected_label = None
+    while not selected_label:
+        choice = simpledialog.askstring("Save Image", "Enter the number of the image you want to save:")
         try:
-           filename = filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG file", "*.png")])
-           img = Image.open(io.BytesIO(urllib.request.urlopen(output_url).read()))
-           img.save(filename)
-           tk.messagebox.showinfo("Success", "Image saved successfully")
+            choice = int(choice)
+            selected_label = image_choices[choice - 1][1]
+        except (ValueError, IndexError):
+            tk.messagebox.showerror("Error", "Invalid selection")
+
+    # Save the selected image
+        try:
+            filename = filedialog.asksaveasfilename(defaultextension='.png')
+            if filename:
+                img = Image.open(io.BytesIO(urllib.request.urlopen(selected_label.image_url).read()))
+                img.save(filename)
+                tk.messagebox.showinfo("Success", "Image saved successfully")
         except Exception as e:
            tk.messagebox.showerror("Error", f"An error occurred while saving the image: {e}")
 # Save button
