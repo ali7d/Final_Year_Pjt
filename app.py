@@ -80,6 +80,9 @@ def save():
     if not image_labels:
        tk.messagebox.showerror( "Error", "No image URL found to save" )
        return
+    # Create a list of tuples containing the index and label for each image
+    image_choices = [(i, label) for i, label in enumerate(image_labels)]
+    
     # Get the selected image label
     selected_label = None
     while not selected_label:
