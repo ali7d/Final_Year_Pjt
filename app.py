@@ -35,13 +35,16 @@ image_labels = []
 def generate():
     global output_url
     # Get the text from the text box
-    text = text_box.get("1.0", "end")
-    #num_images = int(num_images_input.get())
+    text = text_box.get("1.0", "end")    
+    if not text:
+        tk.messagebox.showerror("Error", "Please enter a prompt")
+        return
+    
+    api_token = os.environ.get("REPLICATE_API_TOKEN")
 
     # Use the Replicate Stable Diffusion API
     try:
         model = replicate.models.get("stability-ai/stable-diffusion")
-        #for i in range(num_images):
         output_url = model.predict(prompt=text)[0]
     except Exception as e:
         tk.messagebox.showerror("Error", f"An error occurred while generating the image: {e}")
@@ -106,6 +109,8 @@ def save():
                 img = Image.open(io.BytesIO(urllib.request.urlopen(selected_label.image_url).read()))
                 img.save(filename)
                 tk.messagebox.showinfo("Success", "Image saved successfully")
+            else:
+                tk.messagebox.showinfo("Info", "Save operation cancelled")    
         except Exception as e:
            tk.messagebox.showerror("Error", f"An error occurred while saving the image: {e}")
 # Save button
