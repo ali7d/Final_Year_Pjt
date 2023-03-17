@@ -2,7 +2,7 @@
 
 Lite Stable Diffusion
 
-![Sample Image](https://github.com/ali7d/Final_Year_Pjt/blob/08a8afecb3e443f225e9761af3d5f0bc3fc5460b/ScreenShott.png)
+![Sample Image](https://github.com/ali7d/Final_Year_Pjt/blob/08a8afecb3e443f225e9761af3d5f0bc3fc5460b/lionsc.png)
 
 
 
