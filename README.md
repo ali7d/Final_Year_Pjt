@@ -1,6 +1,9 @@
 # Final_Year_Pjt
 
-Lite Stable Diffusion
+![Sample Image](https://github.com/ali7d/Final_Year_Pjt/blob/f6324d75c8680fe0356ff0aff8ea7072e8ffa713/icon-sd-lite.png)
+
+
+**Lite Stable Diffusion**
 
 ![Sample Image](https://github.com/ali7d/Final_Year_Pjt/blob/f4730a02750dc67c44d56e1fd1fcf21df3ca2044/lionsc.png)
 
